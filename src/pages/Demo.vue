@@ -25,7 +25,7 @@ export default {
   name: 'vite',
   data() {
     return {
-      url: `http://localhost:4007/child/vite/`,
+      url: `http://localhost:3333/card-manage/`,
       microAppData: { msg: '来自基座的数据' }
     }
   },

@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import useLogin from '@/hooks/useLogin'
 import RoutePath from './path'
 import routes from './routes'
 
@@ -8,12 +9,17 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  if (to.path !== RoutePath.LOGIN) {
-    if (!localStorage.getItem('token')) {
-      next(RoutePath.LOGIN)
-    } else {
+  const { isLogin } = useLogin()
+  if (!isLogin) {
+    if (to.path === RoutePath.LOGIN) {
       next()
+      return
     }
+    next(RoutePath.LOGIN)
+    return
+  } else if (to.path === RoutePath.LOGIN) {
+    const nextPath = from.path || RoutePath.HOME
+    next(nextPath)
     return
   }
   next()
