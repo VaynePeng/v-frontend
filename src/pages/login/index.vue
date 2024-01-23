@@ -1,20 +1,43 @@
 <template>
-  <button
-    class="px-3 py-1 m-5 rounded bg-slate-500 text-white active:bg-slate-400"
-    @click="login"
-  >
-    Login
-  </button>
+  <div class="flex w-full justify-center py-24 mt-[10%]">
+    <div class="flex w-full max-w-sm flex-col items-center px-4 sm:px-0">
+      <div class="mb-10 text-3xl font-semibold leading-7 text-gray-900">
+        运营管理后台
+      </div>
+      <LoginForm v-if="loginType === 'PASSWORD'" @submit="login" />
+      <QrLoginForm v-else />
+      <div
+        class="mt-5 text-sm cursor-pointer text-gray-500 select-none hover:text-gray-400"
+        @click="toggleLoginType"
+      >
+        {{ loginType === 'PASSWORD' ? '扫码' : '密码' }}登录
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import useLogin from '@/hooks/useLogin'
 
+import LoginForm from './components/LoginForm.vue'
+import type { ILoginForm } from './components/LoginForm.vue'
+import QrLoginForm from './components/QrLoginForm.vue'
+
 const router = useRouter()
 const { setToken } = useLogin()
-const login = (): void => {
-  setToken('this is token')
+
+type LoginType = 'QR' | 'PASSWORD'
+const loginType = ref<LoginType>('PASSWORD')
+
+const toggleLoginType = (): void => {
+  loginType.value = loginType.value === 'PASSWORD' ? 'QR' : 'PASSWORD'
+}
+
+const login = (params: ILoginForm): void => {
+  console.log('🚀', params)
+  setToken('jwt_token')
   router.push('/')
 }
 </script>

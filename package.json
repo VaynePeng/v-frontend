@@ -12,6 +12,8 @@
     "@micro-zoe/micro-app": "1.0.0-rc.3",
     "@types/node": "^20.11.5",
     "@vueuse/core": "^10.7.2",
+    "@vueuse/integrations": "^10.7.2",
+    "universal-cookie": "^6",
     "vue": "^3.3.11",
     "vue-router": "4"
   },
