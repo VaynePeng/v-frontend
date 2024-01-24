@@ -1,3 +1,3 @@
 <template>
-  <img class="w-full object-cover" src="https://www.viii.wiki/image/avatar.jpg">
+  <img class="h-[200px] object-cover" src="https://www.viii.wiki/image/avatar.jpg">
 </template>
