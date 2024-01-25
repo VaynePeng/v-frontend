@@ -19,6 +19,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import Message from '@arco-design/web-vue/es/message'
 import useLogin from '@/hooks/useLogin'
 
 import LoginForm from './components/LoginForm.vue'
@@ -38,6 +39,7 @@ const toggleLoginType = (): void => {
 const login = (params: ILoginForm): void => {
   console.log('🚀', params)
   setToken('jwt_token')
+  Message.success('登录成功')
   router.push('/')
 }
 </script>
