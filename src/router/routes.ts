@@ -15,6 +15,10 @@ const routes: RouteRecordRaw[] = [
         component: () => import('@/pages/home/index.vue')
       },
     ]
+  },
+  {
+    path: RoutePath.NOT_FOUND,
+    component: () => import('@/pages/NotFound.vue')
   }
 ]
 

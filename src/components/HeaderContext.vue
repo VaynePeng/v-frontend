@@ -22,4 +22,5 @@ const toggleHeaderVisibility = () => {
 
 provide('toggleHeaderVisibility', toggleHeaderVisibility)
 provide('isHeaderVisible', isHeaderVisible)
+provide('isTabletOrAbove', isTabletOrAbove)
 </script>

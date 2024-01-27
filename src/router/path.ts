@@ -1,6 +1,7 @@
 enum RoutePath {
   LOGIN = '/login',
-  HOME = '/'
+  HOME = '/',
+  NOT_FOUND = '/:pathMatch(.*)*'
 }
 
 export default RoutePath

@@ -16,6 +16,7 @@ declare module 'vue' {
     AMenu: typeof import('@arco-design/web-vue')['Menu']
     AMenuItem: typeof import('@arco-design/web-vue')['MenuItem']
     ASubMenu: typeof import('@arco-design/web-vue')['SubMenu']
+    ATooltip: typeof import('@arco-design/web-vue')['Tooltip']
     Header: typeof import('./src/components/Header.vue')['default']
     HeaderConf: typeof import('./src/components/HeaderConf.vue')['default']
     HeaderContext: typeof import('./src/components/HeaderContext.vue')['default']

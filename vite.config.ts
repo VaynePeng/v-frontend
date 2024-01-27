@@ -6,6 +6,13 @@ import { ArcoResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  css: {  
+    preprocessorOptions: {
+      less: {
+        modifyVars: { 'primary-6': '#334155' }
+      }
+    }
+  },
   plugins: [
     vue({
       template: {
@@ -15,12 +22,12 @@ export default defineConfig({
       }
     }),
     AutoImport({
-      resolvers: [ArcoResolver()],
+      resolvers: [ArcoResolver()]
     }),
     Components({
       resolvers: [
         ArcoResolver({
-          sideEffect: true
+          importStyle: 'less'
         })
       ]
     })
