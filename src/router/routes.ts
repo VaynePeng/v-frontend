@@ -17,9 +17,9 @@ const routes: RouteRecordRaw[] = [
     ]
   },
   {
-    path: RoutePath.DEBUG
+    path: RoutePath.DEBUG,
     meta: {
-      onlyDev: true
+      isDev: true
     },
     component: () => import('@/pages/Debug.vue')
   },
