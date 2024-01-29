@@ -25,7 +25,7 @@ export default {
   name: 'vite',
   data() {
     return {
-      url: `http://localhost:3333/card-manage/`,
+      url: `http://localhost:3000/proxy-prod/#/login`,
       microAppData: { msg: '来自基座的数据' }
     }
   },

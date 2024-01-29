@@ -4,7 +4,9 @@
       <Header />
       <a-layout>
         <Sider />
-        <a-layout-content class="p-5">Content</a-layout-content>
+        <a-layout-content class="p-5">
+          <router-view />
+        </a-layout-content>
       </a-layout>
     </HeaderContext>
   </a-layout>

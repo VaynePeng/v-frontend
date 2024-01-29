@@ -13,8 +13,15 @@ const routes: RouteRecordRaw[] = [
       {
         path: RoutePath.HOME,
         component: () => import('@/pages/home/index.vue')
-      },
+      }
     ]
+  },
+  {
+    path: RoutePath.DEBUGGER,
+    meta: {
+      onlyDev: true
+    },
+    component: () => import('@/pages/Debugger.vue')
   },
   {
     path: RoutePath.NOT_FOUND,
