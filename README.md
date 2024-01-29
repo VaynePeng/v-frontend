@@ -1,3 +1,3 @@
-### Micro Frontend
+### V Frontend
 
 主应用使用技术栈：MicroApp、Vite、Vue3、Tailwindcss、TypeScript、Arco Design
