@@ -17,11 +17,11 @@ const routes: RouteRecordRaw[] = [
     ]
   },
   {
-    path: RoutePath.DEBUGGER,
+    path: RoutePath.DEBUG
     meta: {
       onlyDev: true
     },
-    component: () => import('@/pages/Debugger.vue')
+    component: () => import('@/pages/Debug.vue')
   },
   {
     path: RoutePath.NOT_FOUND,

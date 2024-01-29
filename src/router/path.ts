@@ -1,7 +1,7 @@
 enum RoutePath {
   LOGIN = '/login',
   HOME = '/',
-  DEBUGGER = '/debugger',
+  DEBUG= '/debug',
   NOT_FOUND = '/:pathMatch(.*)*'
 }
 
