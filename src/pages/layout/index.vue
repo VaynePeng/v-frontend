@@ -1,6 +1,6 @@
 <template>
   <a-layout class="w-screen h-screen overflow-hidden">
-    <HeaderContext>
+    <HeaderProvide>
       <Header />
       <a-layout>
         <Sider />
@@ -8,12 +8,12 @@
           <router-view />
         </a-layout-content>
       </a-layout>
-    </HeaderContext>
+    </HeaderProvide>
   </a-layout>
 </template>
 
 <script setup lang="ts">
-import HeaderContext from '@/components/HeaderContext.vue'
+import HeaderProvide from '@/components/HeaderProvide.vue'
 import Header from '@/components/Header.vue'
 import Sider from '@/components/Sider.vue'
 </script>
