@@ -2,6 +2,7 @@ import { useStorage } from '@vueuse/core'
 
 const useLogin = () => {
   const token = useStorage<string | null>('token', null)
+  // qm:ticket
 
   const isLogin = Boolean(token.value)
   const setToken = (value: string) => (token.value = value)
@@ -9,7 +10,8 @@ const useLogin = () => {
   return {
     isLogin,
     setToken,
-    removeToken
+    removeToken,
+    token: token.value
   }
 }
 

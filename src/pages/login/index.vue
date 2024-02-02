@@ -4,8 +4,10 @@
       <div class="mb-10 text-3xl font-semibold leading-7 text-gray-900">
         运营管理后台
       </div>
-      <LoginForm v-if="loginType === 'PASSWORD'" @submit="login" />
-      <QrLoginForm v-else />
+      <KeepAlive>
+        <LoginForm v-if="loginType === 'PASSWORD'" @submit="login" />
+        <QrLoginForm v-else />
+      </KeepAlive>
       <div
         class="mt-5 text-sm cursor-pointer text-gray-500 select-none hover:text-gray-400"
         @click="toggleLoginType"
@@ -17,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, KeepAlive } from 'vue'
 import { useRouter } from 'vue-router'
 import Message from '@arco-design/web-vue/es/message'
 import useLogin from '@/hooks/useLogin'
@@ -38,6 +40,14 @@ const toggleLoginType = (): void => {
 
 const login = (params: ILoginForm): void => {
   console.log('🚀', params)
+  if (!params.phoneNumber) {
+    Message.error('请输入手机号')
+    return
+  }
+  if (!params.verifyNumber) {
+    Message.error('请输入验证码')
+    return
+  }
   setToken('jwt_token')
   Message.success('登录成功')
   router.push('/')
