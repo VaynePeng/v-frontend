@@ -10,6 +10,9 @@
     "lint": "eslint .",
     "prepare": "husky"
   },
+  "lint-staged": {
+    "*.{js,ts,tsx,vue}": "eslint"
+  },
   "dependencies": {
     "@micro-zoe/micro-app": "1.0.0-rc.3",
     "@types/node": "^20.11.5",
