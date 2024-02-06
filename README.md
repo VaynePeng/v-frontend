@@ -7,4 +7,5 @@
 - [ ] 移除 Arco Design，自己实现 Menu、Layout、Message 等常用组件
 - [x] 添加 Eslint、Husky
 - [ ] 添加 Vue 和 React 的微应用 Demo
+- [ ] 使用 ESLint Stylistic
  
