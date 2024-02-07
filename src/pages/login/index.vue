@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, KeepAlive } from 'vue'
+import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import Message from '@arco-design/web-vue/es/message'
 import useLogin from '@/hooks/useLogin'

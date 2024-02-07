@@ -11,7 +11,7 @@
       @unmount="handleUnmount"
       @error="handleError"
       @datachange="handleDataChange"
-    ></micro-app>
+    />
   </div>
 </template>
 
@@ -22,7 +22,7 @@ import { EventCenterForMicroApp } from '@micro-zoe/micro-app'
 window.eventCenterForAppNameVite = new EventCenterForMicroApp('appname-vite')
 
 export default {
-  name: 'vite',
+  name: 'Vite',
   data() {
     return {
       url: `http://localhost:3000/proxy-prod/#/login`,

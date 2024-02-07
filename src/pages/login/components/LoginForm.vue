@@ -4,14 +4,14 @@
     placeholder="请输入手机号"
     :value="loginForm.phoneNumber"
     @input="inputPhoneHandle"
-  />
+  >
   <div class="flex w-full mt-5">
     <input
       class="rounded-md focus:ring-2 focus:ring-black bg-background flex-1 p-2"
       placeholder="请输入验证码"
       :value="loginForm.verifyNumber"
       @input="inputCodeHandle"
-    />
+    >
     <button
       class="rounded-md bg-gray-700 text-white flex-none p-2 ml-2 hover:bg-slate-600 disabled:bg-gray-500 disabled:cursor-not-allowed"
       :disabled="disabledSendCode"

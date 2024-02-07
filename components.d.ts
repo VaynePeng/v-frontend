@@ -23,6 +23,7 @@ declare module 'vue' {
     HeaderProvide: typeof import('./src/components/HeaderProvide.vue')['default']
     HeaderVisibleConf: typeof import('./src/components/HeaderVisibleConf.vue')['default']
     HeaderVisibleContext: typeof import('./src/components/HeaderVisibleContext.vue')['default']
+    Input: typeof import('./src/components/Input.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Sider: typeof import('./src/components/Sider.vue')['default']

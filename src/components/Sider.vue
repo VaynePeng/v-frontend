@@ -8,18 +8,28 @@
         <template #icon>
           <IconHome />
         </template>
-        <template #title>首页</template>
-        <a-menu-item key="0_0">测试菜单</a-menu-item>
-        <a-menu-item key="0_1">测试菜单</a-menu-item>
-        <a-menu-item key="0_2">测试菜单</a-menu-item>
-        <a-menu-item key="0_3">测试菜单</a-menu-item>
+        <template #title>
+          首页
+        </template>
+        <a-menu-item key="0_0">
+          测试菜单
+        </a-menu-item>
+        <a-menu-item key="0_1">
+          测试菜单
+        </a-menu-item>
+        <a-menu-item key="0_2">
+          测试菜单
+        </a-menu-item>
+        <a-menu-item key="0_3">
+          测试菜单
+        </a-menu-item>
       </a-sub-menu>
     </a-menu>
   </a-layout-sider>
   <div
     class="w-[200px] transition-all ease-linear delay-100 max-md:hidden"
     :class="{ '!w-0': !isHeaderVisible }"
-  ></div>
+  />
 </template>
 
 <script setup lang="ts">

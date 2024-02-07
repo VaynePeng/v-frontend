@@ -4,14 +4,14 @@
     :value="value"
     :placeholder="placeholder"
     @input="onInput"
-  />
+  >
 </template>
 
 <script setup lang="ts">
 import { defineEmits } from 'vue'
 
 interface Props {
-  value: string | number;
+  value: string | number
   placeholder: string
 }
 withDefaults(defineProps<Props>(), {
