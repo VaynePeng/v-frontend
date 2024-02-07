@@ -1,18 +1,20 @@
+import js from '@eslint/js'
 import stylistic from '@stylistic/eslint-plugin'
-import esLintVue from 'eslint-plugin-vue'
+import { FlatCompat } from '@eslint/eslintrc'
+
+const compat = new FlatCompat({
+  recommendedConfig: js.configs.recommended
+})
 
 export default [
-  {
-    plugins: {
-      '@stylistic': stylistic,
-      'plugin:vue/vue3-recommended': esLintVue
-    },
-    files: ['**/*.{js,ts,tsx,vue}'],
-    rules: {
-      '@stylistic/indent': ['error', 2],
-      '@stylistic/quotes': ['error', 'single'],
-      '@stylistic/semi': ['error', 'never'],
-      'comma-dangle': ['error', 'never']
-    }
-  }
+  ...compat.extends('eslint:recommended'),
+  ...compat.extends('plugin:@typescript-eslint/recommended'),
+  ...compat.extends('plugin:vue/vue3-essential'),
+  stylistic.configs.customize({
+    indent: 2,
+    quotes: 'single',
+    semi: false,
+    jsx: true,
+    commaDangle: 'never'
+  })
 ]
