@@ -46,7 +46,8 @@ export default [
           multiline: 'below'
         }
       ],
-      'vue/multi-word-component-names': 'off'
+      'vue/multi-word-component-names': 'off',
+      'vue/html-self-closing': 'off'
     }
   },
   stylistic.configs.customize({

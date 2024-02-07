@@ -4,7 +4,7 @@
     :value="value"
     :placeholder="placeholder"
     @input="onInput"
-  >
+  />
 </template>
 
 <script setup lang="ts">
