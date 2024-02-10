@@ -1,37 +1,39 @@
 <template>
-  <input
-    class="rounded-md focus:ring-2 focus:ring-black bg-background w-full p-2"
+  <Input
     placeholder="请输入手机号"
     :value="loginForm.phoneNumber"
     @input="inputPhoneHandle"
   />
   <div class="flex w-full mt-5">
-    <input
-      class="rounded-md focus:ring-2 focus:ring-black bg-background flex-1 p-2"
+    <Input
+      custom-class="flex-1"
       placeholder="请输入验证码"
       :value="loginForm.verifyNumber"
       @input="inputCodeHandle"
     />
-    <button
-      class="rounded-md bg-gray-700 text-white flex-none p-2 ml-2 hover:bg-slate-600 disabled:bg-gray-500 disabled:cursor-not-allowed"
+    <Button
+      class="flex-none w-auto"
       :disabled="disabledSendCode"
       @click="sendCode"
     >
       {{ sendCodeTimer ? `重新发送(${sendCodeTimer}s)` : '获取验证码' }}
-    </button>
+    </Button>
   </div>
-  <button
-    class="w-full bg-gray-700 rounded-md text-white p-2 mt-10 hover:bg-slate-600"
+  <Button
+    custom-class="mt-10"
     @click="submit"
   >
     登录
-  </button>
+  </Button>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useStorage } from '@vueuse/core'
 import { computed } from 'vue'
+
+import Input from '@/components/Input.vue'
+import Button from '@/components/Button.vue'
 
 const emits = defineEmits(['submit'])
 
@@ -70,16 +72,14 @@ onMounted(() => {
   }
 })
 
-const inputPhoneHandle = (e: Event) => {
-  const target = e.target as HTMLInputElement
-  target.value = target.value.replace(/[^\d]/g, '')
-  loginForm.value.phoneNumber = target.value
+const inputPhoneHandle = (value: string) => {
+  const formatStr = value.replace(/[^\d]/g, '')
+  loginForm.value.phoneNumber = formatStr
 }
 
-const inputCodeHandle = (e: Event) => {
-  const target = e.target as HTMLInputElement
-  target.value = target.value.replace(/[^0-9a-zA-Z]/g, '')
-  loginForm.value.verifyNumber = target.value
+const inputCodeHandle = (value: string) => {
+  const formatStr = value.replace(/[^0-9a-zA-Z]/g, '')
+  loginForm.value.verifyNumber = formatStr
 }
 
 const submit = () => {
