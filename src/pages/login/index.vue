@@ -1,19 +1,20 @@
 <template>
   <div class="flex w-full justify-center py-24 mt-[10%]">
     <div class="flex w-full max-w-sm flex-col items-center px-4 sm:px-0">
-      <div class="mb-10 text-3xl font-semibold leading-7 text-gray-900">
+      <div class="mb-10 text-2xl font-semibold leading-7 text-gray-900">
         运营管理后台
       </div>
       <KeepAlive>
         <LoginForm v-if="loginType === 'PASSWORD'" @submit="login" />
         <QrLoginForm v-else />
       </KeepAlive>
-      <div
-        class="mt-5 text-sm cursor-pointer text-gray-500 select-none hover:text-gray-400"
+      <Button
+        class="mt-2"
+        button-type="text"
         @click="toggleLoginType"
       >
         {{ loginType === 'PASSWORD' ? '扫码' : '密码' }}登录
-      </div>
+      </Button>
     </div>
   </div>
 </template>
@@ -21,9 +22,10 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import Message from '@arco-design/web-vue/es/message'
 import useLogin from '@/hooks/useLogin'
 
+import Message from '@/components/Message.vue'
+import Button from '@/components/Button.vue'
 import LoginForm from './components/LoginForm.vue'
 import type { ILoginForm } from './components/LoginForm.vue'
 import QrLoginForm from './components/QrLoginForm.vue'

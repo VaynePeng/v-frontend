@@ -6,10 +6,6 @@ import { FlatCompat } from '@eslint/eslintrc'
 const compat = new FlatCompat()
 
 export default [
-  // 只有 ignores 选项时将作为全局配置 只有全局的 ignores 模式才能匹配目录。属于特定配置的 ignores 模式只会匹配文件名
-  {
-    ignores: ['dist']
-  },
   eslint.configs.recommended,
   ...compat.plugins('vue'),
   ...compat.extends('plugin:vue/vue3-recommended').map((config) => {
@@ -25,6 +21,12 @@ export default [
       }
     }
   }),
+  {
+    files: ['**/*.{ts,tsx}'],
+    languageOptions: {
+      parser: typescriptESLintParser
+    }
+  },
   {
     files: ['**/*.vue'],
     rules: {

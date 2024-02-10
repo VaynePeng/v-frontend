@@ -1,12 +1,10 @@
 <template>
-  <a-layout-header
+  <header
     class="h-[60px] flex items-center justify-between px-5 shadow-sm bg-slate-50"
   >
-    <a-button size="large" @click="toggleHeaderVisibility">
-      <template #icon>
-        <IconMenu />
-      </template>
-    </a-button>
+    <Button button-type="text" @click="toggleHeaderVisibility">
+      <Icon icon="icon-menu" />
+    </Button>
     <a-tooltip content="退出登录" position="bottom">
       <template v-if="isTabletOrAbove">
         <a-button size="large" type="text" @click="loginOut">
@@ -24,21 +22,25 @@
         </a-button>
       </template>
     </a-tooltip>
-  </a-layout-header>
+  </header>
 </template>
 
 <script setup lang="ts">
 import { inject } from 'vue'
 import { useRouter } from 'vue-router'
-import { IconMenu, IconPoweroff } from '@arco-design/web-vue/es/icon'
+import { IconPoweroff } from '@arco-design/web-vue/es/icon'
 import useLogin from '@/hooks/useLogin'
 import RoutePath from '@/router/path'
+
+import type { IsTabletOrAbove, ToggleHeaderVisibility } from './HeaderProvide.vue'
+import Button from '@/components/Button.vue'
+import Icon from '@/components/Icon.vue'
 
 const { removeToken } = useLogin()
 const router = useRouter()
 
-const isTabletOrAbove = inject('isTabletOrAbove')
-const toggleHeaderVisibility = inject('toggleHeaderVisibility')
+const isTabletOrAbove = inject<IsTabletOrAbove>('isTabletOrAbove')
+const toggleHeaderVisibility = inject<ToggleHeaderVisibility>('toggleHeaderVisibility')
 
 const loginOut = (): void => {
   removeToken()

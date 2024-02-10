@@ -6,13 +6,13 @@
   />
   <div class="flex w-full mt-5">
     <Input
-      custom-class="flex-1"
+      class="flex-1"
       placeholder="请输入验证码"
       :value="loginForm.verifyNumber"
       @input="inputCodeHandle"
     />
     <Button
-      class="flex-none w-auto"
+      class="flex-none"
       :disabled="disabledSendCode"
       @click="sendCode"
     >
@@ -20,7 +20,7 @@
     </Button>
   </div>
   <Button
-    custom-class="mt-10"
+    class="mt-10 w-full"
     @click="submit"
   >
     登录

@@ -4,7 +4,7 @@ import router from './router'
 
 import App from './App.vue'
 
-import '@arco-design/web-vue/es/message/style/css.js'
+import '@/assets/styles/iconfont.css'
 import './style.css'
 
 microApp.start({

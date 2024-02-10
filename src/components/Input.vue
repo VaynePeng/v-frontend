@@ -1,7 +1,6 @@
 <template>
   <input
-    class="rounded-md focus:ring-2 focus:ring-black bg-background flex-1 p-2 w-full"
-    :class="customClass"
+    class="rounded-md focus:ring-2 focus:ring-black bg-background flex-1 p-2 w-full text-sm"
     :value="value"
     :placeholder="placeholder"
     @input="onInput"
@@ -9,12 +8,11 @@
 </template>
 
 <script setup lang="ts">
-import { defineEmits } from 'vue'
+import { defineEmits, withDefaults, defineProps } from 'vue'
 
 interface Props {
   value: string | number
   placeholder: string
-  customClass?: string
 }
 withDefaults(defineProps<Props>(), {
   value: '',

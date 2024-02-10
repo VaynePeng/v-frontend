@@ -23,4 +23,8 @@ const toggleHeaderVisibility = () => {
 provide('toggleHeaderVisibility', toggleHeaderVisibility)
 provide('isHeaderVisible', isHeaderVisible)
 provide('isTabletOrAbove', isTabletOrAbove)
+
+export type IsTabletOrAbove = typeof isTabletOrAbove
+export type IsHeaderVisible = typeof isHeaderVisible
+export type ToggleHeaderVisibility = typeof toggleHeaderVisibility
 </script>
