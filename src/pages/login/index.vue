@@ -24,7 +24,7 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import useLogin from '@/hooks/useLogin'
 
-import Message from '@/components/Message.vue'
+import Message from '@/components/message'
 import Button from '@/components/Button.vue'
 import LoginForm from './components/LoginForm.vue'
 import type { ILoginForm } from './components/LoginForm.vue'
@@ -43,11 +43,11 @@ const toggleLoginType = (): void => {
 const login = (params: ILoginForm): void => {
   console.log('🚀', params)
   if (!params.phoneNumber) {
-    Message.error('请输入手机号')
+    Message.success('请输入手机号')
     return
   }
   if (!params.verifyNumber) {
-    Message.error('请输入验证码')
+    Message.success('请输入验证码')
     return
   }
   setToken('jwt_token')

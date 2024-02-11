@@ -26,7 +26,7 @@ declare module 'vue' {
     HeaderVisibleContext: typeof import('./src/components/HeaderVisibleContext.vue')['default']
     Icon: typeof import('./src/components/Icon.vue')['default']
     Input: typeof import('./src/components/Input.vue')['default']
-    Message: typeof import('./src/components/Message.vue')['default']
+    Message: typeof import('./src/components/message/index.vue')['default']
     MessageConent: typeof import('./src/components/MessageConent.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

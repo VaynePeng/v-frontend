@@ -1,3 +1,4 @@
+import globals from 'globals'
 import eslint from '@eslint/js'
 import stylistic from '@stylistic/eslint-plugin'
 import typescriptESLintParser from '@typescript-eslint/parser'
@@ -24,7 +25,10 @@ export default [
   {
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
-      parser: typescriptESLintParser
+      parser: typescriptESLintParser,
+      globals: {
+        ...globals.browser
+      }
     }
   },
   {
