@@ -1,15 +1,15 @@
 <template>
-  <a-layout class="w-screen h-screen overflow-hidden">
+  <div class="w-screen h-screen overflow-hidden">
     <HeaderProvide>
       <Header />
-      <a-layout>
+      <section class="flex">
         <Sider />
-        <a-layout-content class="p-5">
+        <section class="p-5">
           <router-view />
-        </a-layout-content>
-      </a-layout>
+        </section>
+      </section>
     </HeaderProvide>
-  </a-layout>
+  </div>
 </template>
 
 <script setup lang="ts">

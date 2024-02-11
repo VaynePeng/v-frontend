@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineEmits, withDefaults, defineProps } from 'vue'
+import { withDefaults } from 'vue'
 
 interface Props {
   value: string | number

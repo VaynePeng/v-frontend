@@ -1,16 +1,16 @@
 <template>
   <i
     class="iconfont cursor-pointer"
-    :class="icon"
+    :class="name"
     :style="{'font-size': `${size}px`}"
   ></i>
 </template>
 
 <script setup lang="ts">
-import { defineProps, withDefaults } from 'vue'
+import { withDefaults } from 'vue'
 
 interface Props {
-  icon: string
+  name: string
   size?: number
 }
 

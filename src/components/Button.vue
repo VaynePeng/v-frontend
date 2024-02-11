@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import { withDefaults, defineProps } from 'vue'
+import { withDefaults } from 'vue'
 
 type ButtonType = 'text' | 'primary' | 'danger'
 interface Props {
