@@ -7,7 +7,7 @@
   </aside>
   <div
     class="w-[200px] transition-all ease-linear max-md:hidden"
-    :class="{ 'w-0': !isHeaderVisible }"
+    :class="{ '!w-0': !isHeaderVisible }"
   />
 </template>
 
