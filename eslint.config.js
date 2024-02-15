@@ -7,6 +7,9 @@ import { FlatCompat } from '@eslint/eslintrc'
 const compat = new FlatCompat()
 
 export default [
+  {
+    ignores: ['packages/*']
+  },
   eslint.configs.recommended,
   ...compat.plugins('vue'),
   ...compat.extends('plugin:vue/vue3-recommended').map((config) => {
