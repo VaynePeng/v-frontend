@@ -22,7 +22,7 @@ export default defineConfig({
     alias: [{ find: '@', replacement: '/src' }]
   },
   server: {
-    proxy: {
+    /* proxy: {
       '/proxy-dev': {
         target: 'http://localhost:8080',
         changeOrigin: true,
@@ -38,7 +38,7 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: path => path.replace(/^\/proxy-prod/, '')
       }
-    },
+    }, */
     port: 3000,
     open: true
   }

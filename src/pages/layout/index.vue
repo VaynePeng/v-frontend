@@ -1,10 +1,10 @@
 <template>
-  <div class="w-screen h-screen overflow-hidden">
+  <div class="w-screen h-screen overflow-hidden flex flex-col">
     <HeaderProvide>
       <Header />
-      <section class="flex">
+      <section class="flex flex-1">
         <Sider />
-        <section class="p-5">
+        <section class="flex-1">
           <router-view />
         </section>
       </section>

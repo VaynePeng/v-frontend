@@ -1,6 +1,6 @@
 <template>
   <header
-    class="h-[60px] flex items-center justify-between px-5 shadow-sm bg-slate-50"
+    class="h-[60px] flex items-center justify-between px-5 shadow-sm bg-slate-50 flex-none"
   >
     <Button button-type="text" @click="toggleHeaderVisibility">
       <Icon name="icon-menu" />
