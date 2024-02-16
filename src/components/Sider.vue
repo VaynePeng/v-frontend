@@ -1,6 +1,6 @@
 <template>
   <aside
-    class="w-[200px] fixed top-[60px] bottom-0 transition-all ease-linear shadow bg-white py-2"
+    class="w-[200px] fixed top-[60px] bottom-0 transition-all ease-linear shadow bg-white py-2 z-50"
     :class="{ '-translate-x-[200px]': !isHeaderVisible }"
   >
     <Menu :menu-list="menuList" />
